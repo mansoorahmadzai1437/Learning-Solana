@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const web3_js_1 = require("@solana/web3.js");
+require("dotenv/config");
+const helpers_1 = require("@solana-developers/helpers");
+const keypair = web3_js_1.Keypair.generate();
+const keypair2 = (0, helpers_1.getKeypairFromEnvironment)("SECRET_KEY");
+console.log("✅ Keypair generated!");
+console.log(`The public key is ${keypair.publicKey}`);
+console.log(`The secret key is ${keypair.secretKey}`);
+console.log(`The public key loaded from an existing secret key in the .env file is ${keypair2.publicKey}`);
+console.log("✅ Finished!");
